@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 
 import androidx.annotation.Nullable;
-import android.provider.Settings;
 
 import com.android.customization.picker.themedicon.ThemedIconSectionView;
 import com.android.wallpaper.R;
@@ -53,7 +52,7 @@ public class ThemedIconSectionController implements
 
     @Override
     public boolean isAvailable(@Nullable Context context) {
-        return true;
+        return context != null && mThemedIconOptionsProvider.isThemedIconAvailable();
     }
 
     @Override
